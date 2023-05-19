@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml"><head>
+    <title>User Input Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<meta charset="ISO-8859-1">
+<h1>User Input Page${id}</h1>
+
+<label for="userInput">Enter your text:</label>
+<input type="text" id="userInput">
+<button onclick="displayText()">Submit</button>
+
+<div id="output"></div>
+<div id="id"></div>
+<!--<button hidden="hidden" th:utext=/*"'hello'+${{id}}" ></button> -->
+<p hidden="hidden" th:utext="${id}"></p>
+
+<script>
+    function displayText() {
+        var userInput = document.getElementById("userInput").value;
+        document.getElementById("output").textContent = userInput;
+    }
+</script>
+</body>
+</html>
