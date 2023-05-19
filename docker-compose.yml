@@ -1,4 +1,4 @@
-ersion: "3"
+version: "1"
 services:
   vuln:
     build: .
