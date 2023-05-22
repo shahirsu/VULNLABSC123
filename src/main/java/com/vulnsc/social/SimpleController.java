@@ -14,7 +14,9 @@ import java.util.Map;
 
 
 @RestController
+
 public class SimpleController {
+
     private static final String CLIENT_ID_PARAM_NAME = "id";
     private static final String WEB = "index.html";
     @RequestMapping(value = {"/{id}/index"},
