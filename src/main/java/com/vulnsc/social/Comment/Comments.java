@@ -73,7 +73,7 @@ public class Comments {
                 + "<title>Comments Page</title>"
                 + "</head>"
                 + "<body>"
-                + commentsPayload
+                + payload
                 + "</body>"
                 + "</html>";
     }
@@ -81,9 +81,8 @@ public class Comments {
     private String getLinksPayload(Function<Post, String> function) {
         StringBuilder posts = new StringBuilder();
         this.postRepository.findAll().forEach(post -> {
-            posts.append("<div id=\"comments\">")
-                    .append(function.apply(post)).append("<a href=\"").append(function.apply(post)).append("\">")
-                    .append("</div>");
+            posts.append("<a href=\"").append(function.apply(post)).append("\">")
+                    .append(function.apply(post)).append("</a><br>");
         });
         return posts.toString();
 
