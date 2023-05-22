@@ -1,4 +1,4 @@
-package com.kindsonthegenius.social;
+package com.vulnsc.social;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

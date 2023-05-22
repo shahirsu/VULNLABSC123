@@ -1,7 +1,6 @@
-package com.kindsonthegenius.social.Comment;
+package com.vulnsc.social.Comment;
 
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 import java.util.function.Function;
-import java.util.regex.Pattern;
 
 @RestController
 public class Comments {

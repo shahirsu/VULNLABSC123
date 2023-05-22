@@ -1,4 +1,4 @@
-package com.kindsonthegenius.social.Comment;
+package com.vulnsc.social.Comment;
 
 public class Encoder {
     public static String encodeHTML(String input) {

@@ -1,4 +1,4 @@
-package com.kindsonthegenius.social;
+package com.vulnsc.social;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

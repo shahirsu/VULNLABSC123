@@ -1,4 +1,4 @@
-package com.kindsonthegenius.social.Comment;
+package com.vulnsc.social.Comment;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

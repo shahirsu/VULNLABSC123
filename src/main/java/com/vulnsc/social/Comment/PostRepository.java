@@ -1,6 +1,4 @@
-package com.kindsonthegenius.social.Comment;
-
-import java.util.List;
+package com.vulnsc.social.Comment;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
