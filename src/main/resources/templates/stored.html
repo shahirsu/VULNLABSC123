@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Form</title>
+    <style>
+
+        h2 {
+            color: #FF0000; /* Red color */
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100 vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .input-field {
+            margin-bottom: 20px;
+        }
+        .input-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-field input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .output {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .centered-div {
+            width: 200px;
+            color: green;
+            height: 100px;
+            background-color: black;
+            text-align: center;
+            line-height: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<head>
+    <title>Input Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h2>Input Form</h2>
+<form id="myForm">
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText" name="inputText">
+    <button type="submit">Submit</button>
+</form>
+<div class="centered-div" id="output"></div>
+
+<script>
+    $(document).ready(function () {
+        $("#myForm").submit(function (event) {
+            event.preventDefault();
+            var inputText = $("#inputText").val();
+
+            $.ajax({
+                type: "POST",
+                url: "/comments",
+                data: { comment: inputText },
+                success: function (response) {
+                    $("#output").html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>
+<div class="comment">
+
+</div>
+</body>
+</html>
+</html>

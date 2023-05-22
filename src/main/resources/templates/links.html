@@ -50,8 +50,6 @@
         document.getElementById("output").textContent = userInput;
     }
 </script>
-<div class="comment">
-    &lt;img src=&quot;invalid-image&quot; onerror=&quot;alert('XSS Attack!');&quot;&gt;
-</div>
+<a th:href="${payload}">hi</p></a>
 </body>
 </html>
