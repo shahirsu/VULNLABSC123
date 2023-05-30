@@ -59,10 +59,7 @@ public class Comments {
     @ResponseBody
     public String getCommentsPage() {
         String payload = getLinksPayload(Post::getContent);
-        // Call the getCommentsPayload method to get the HTML content
         String commentsPayload = getCommentsPayload(post -> {
-            // Replace this lambda function with your actual implementation
-            // to generate the comments HTML for each post
             return "<p>" + payload + "</p>";
         });
 
