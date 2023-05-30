@@ -56,23 +56,20 @@ public class Comments {
     }
 
     @GetMapping("/links")
-    @ResponseBody
-    public String getCommentsPage() {
+    public ModelAndView getCommentsPage() {
         String payload = getLinksPayload(Post::getContent);
         String commentsPayload = getCommentsPayload(post -> {
             return "<p>" + payload + "</p>";
         });
 
-        // Return the HTML as the response
-        return "<!DOCTYPE html>"
-                + "<html>"
-                + "<head>"
-                + "<title>Comments Page</title>"
-                + "</head>"
-                + "<body>"
-                + payload
-                + "</body>"
-                + "</html>";
+        // Create a new ModelAndView object and set the view name
+        ModelAndView modelAndView = new ModelAndView("links");
+
+        // Add the payload as a model attribute
+        modelAndView.addObject("payload", payload);
+
+        // Return the ModelAndView object
+        return modelAndView;
     }
 
     private String getLinksPayload(Function<Post, String> function) {
