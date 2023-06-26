@@ -1,5 +1,6 @@
 package com.vulnsc.social.Comment;
 
+//CUSTOM encoder
 public class Encoder {
     public static String encodeHTML(String input) {
         StringBuilder encoded = new StringBuilder();

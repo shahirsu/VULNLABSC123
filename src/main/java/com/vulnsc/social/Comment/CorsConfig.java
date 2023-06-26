@@ -23,16 +23,23 @@ public class CorsConfig {
     @Value("${cors.allowedOriginsRegex}")
     private String allowedOriginsRegex;
 
+
+    // Configures and creates a CorsFilter bean for handling CORS (Cross-Origin Resource Sharing)
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Collections.singletonList(allowedOriginsRegex)); // Allow all origins initially
+        // Set the allowed origins using the provided regex pattern
+        config.setAllowedOrigins(Collections.singletonList(allowedOriginsRegex));
+        // Allow all HTTP methods and headers
         config.setAllowedMethods(Collections.singletonList("*"));
         config.setAllowedHeaders(Collections.singletonList("*"));
+        // Allow credentials
         config.setAllowCredentials(true);
+        // Register the CORS configuration for all URLs
         source.registerCorsConfiguration("/**", config);
 
+        // Create a custom CorsFilter to dynamically update the allowed origins based on the request's Origin header
         return new CorsFilter(source) {
             @Override
             protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

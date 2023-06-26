@@ -6,6 +6,6 @@ public class WelcomeController {
 
 	@RequestMapping(value="/welcome")
 	public static String welcome() {
-		return "Kindson The Tech Pro";		
+		return "Welcome";
 	}
 }
