@@ -3,4 +3,4 @@ services:
   vuln:
     build: .
     ports:
-      - 3036:3036
+      - 3036:8081
